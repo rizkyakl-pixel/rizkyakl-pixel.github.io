@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKL Pro | Konsultasi Keuangan & Audit Profesional</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk warna dan font Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#1E293B', // Dark Slate Blue
+                        'accent-profit': '#10B981', // Emerald Green for profit
+                        'secondary-gray': '#F1F5F9', // Light Gray
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for elegance (optional, modern browsers only) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1E293B;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        /* Smooth scrolling for internal links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Style untuk hover kartu layanan */
+        .service-card {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-white font-sans text-primary-dark">
+
+    <!-- Header & Navigation Bar (Fixed) -->
+    <header class="sticky top-0 z-50 bg-primary-dark shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4">
+            <!-- Logo/Nama Perusahaan -->
+            <a href="#hero" class="text-2xl font-extrabold text-accent-profit tracking-wider">
+                AKL<span class="text-white font-light">PRO</span>
+            </a>
+
+            <!-- Navigasi Desktop -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#layanan" class="text-white hover:text-accent-profit transition duration-300 font-medium">Layanan</a>
+                <a href="#keunggulan" class="text-white hover:text-accent-profit transition duration-300 font-medium">Keunggulan</a>
+                <a href="#kontak" class="text-white hover:text-accent-profit transition duration-300 font-medium">Kontak</a>
+            </nav>
+
+            <!-- Tombol Kontak (Desktop) -->
+            <a href="#kontak" class="hidden md:block bg-accent-profit text-primary-dark font-semibold py-2 px-4 rounded-lg hover:bg-emerald-400 transition duration-300 shadow-md">
+                Konsultasi Gratis
+            </a>
+            
+            <!-- Tombol Menu Mobile (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (Hidden by default) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-primary-dark/95 border-t border-gray-700 py-3">
+            <a href="#layanan" class="block px-4 py-2 text-white hover:bg-gray-700">Layanan</a>
+            <a href="#keunggulan" class="block px-4 py-2 text-white hover:bg-gray-700">Keunggulan</a>
+            <a href="#kontak" class="block px-4 py-2 text-white hover:bg-gray-700">Kontak</a>
+            <a href="#kontak" class="block mx-4 mt-2 mb-4 text-center bg-accent-profit text-primary-dark font-semibold py-2 rounded-lg">
+                Konsultasi Gratis
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section: Fokus Utama -->
+    <section id="hero" class="bg-primary-dark text-white pt-20 pb-28 sm:py-32">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-accent-profit text-sm font-semibold uppercase tracking-widest mb-4 block">
+                AKUNTANSI | PAJAK | AUDIT
+            </span>
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight">
+                Mengarahkan <span class="text-accent-profit">Profit</span> dan Kepatuhan Finansial Anda
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                Kami adalah mitra terpercaya Anda dalam mengelola kerumitan keuangan. Dengan analisis data yang tajam, kami mengubah angka menjadi strategi bisnis yang konkret.
+            </p>
+            <a href="#kontak" class="bg-accent-profit text-primary-dark font-bold text-lg py-3 px-8 rounded-xl shadow-xl hover:bg-emerald-400 transition duration-300 transform hover:scale-105 inline-flex items-center">
+                Mulai Audit Sekarang
+                <!-- Ikon Panah Kanan -->
+                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section Layanan: Keahlian Inti AKL -->
+    <section id="layanan" class="py-20 bg-secondary-gray">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-4">Layanan Inti AKL Kami</h2>
+            <p class="text-xl text-gray-600 text-center max-w-2xl mx-auto mb-12">
+                Kami menyediakan solusi komprehensif dari pencatatan harian hingga perencanaan strategis tingkat tinggi.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                
+                <!-- Kartu 1: Audit dan Asuransi -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-accent-profit">
+                    <div class="text-accent-profit mb-4">
+                        <!-- Ikon Audit (Book/Document Check) -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2c4.198 0 8.205.913 11.485 2.505C18.667 4.544 15.343 5 12 5c-3.343 0-6.667-.456-9.485-2.495A11.955 11.955 0 0112 22c-3.268 0-6.505-.445-9.485-1.495C5.333 19.456 8.657 19 12 19s6.667.456 9.485 1.495z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Audit & Assurance</h3>
+                    <p class="text-gray-600">
+                        Memastikan keakuratan laporan keuangan Anda dengan audit independen berstandar global. Kepercayaan investor Anda adalah prioritas kami.
+                    </p>
+                </div>
+
+                <!-- Kartu 2: Konsultasi Pajak -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-primary-dark">
+                    <div class="text-primary-dark mb-4">
+                        <!-- Ikon Pajak (Calculator/Taxes) -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l4-2 4 2v13M9 19h10"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Manajemen Pajak</h3>
+                    <p class="text-gray-600">
+                        Strategi pajak yang efisien dan kepatuhan penuh terhadap regulasi terbaru. Optimasi beban pajak tanpa risiko.
+                    </p>
+                </div>
+
+                <!-- Kartu 3: Perencanaan Keuangan -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-lg border-t-4 border-accent-profit">
+                    <div class="text-accent-profit mb-4">
+                        <!-- Ikon Chart (Financial Growth) -->
+                        <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Analisis Data & Strategi</h3>
+                    <p class="text-gray-600">
+                        Mengubah data historis menjadi prediksi dan rekomendasi strategis untuk pertumbuhan bisnis yang berkelanjutan.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Keunggulan: Data-Driven dan Profesional -->
+    <section id="keunggulan" class="py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:space-x-12 items-center">
+                
+                <!-- Ilustrasi/Mockup (Digantikan Placeholder Teks) -->
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="bg-primary-dark p-8 rounded-xl shadow-2xl text-white">
+                        <h3 class="text-2xl font-bold mb-4 text-accent-profit">Laporan Keuangan Rinci</h3>
+                        <p class="font-mono text-sm mb-3">
+                            <span class="text-gray-400">Total Aset:</span> <span class="float-right text-emerald-300">Rp 12,450,900,000</span>
+                        </p>
+                        <p class="font-mono text-sm mb-3">
+                            <span class="text-gray-400">Liabilitas:</span> <span class="float-right text-red-400">Rp 3,120,500,000</span>
+                        </p>
+                        <hr class="border-gray-700 my-3">
+                        <p class="font-mono text-lg font-bold">
+                            <span class="text-gray-300">Ekuitas Bersih:</span> <span class="float-right text-accent-profit">Rp 9,330,400,000</span>
+                        </p>
+                        <div class="mt-4 text-xs text-gray-500 italic">
+                            Data 100% Valid & Terdokumentasi.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Poin Keunggulan -->
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Mengapa Memilih AKLPRO?</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Kami menerapkan standar tertinggi dalam integritas, kecepatan, dan akurasi, menjadikan kami pilihan utama para profesional.
+                    </p>
+                    
+                    <ul class="space-y-5">
+                        <li class="flex items-start">
+                            <span class="text-accent-profit font-bold text-xl mr-3 mt-1">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-xl">Integritas Tak Tertandingi</h4>
+                                <p class="text-gray-600">Setiap laporan dibuat dengan menjunjung tinggi etika dan kejujuran profesional.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-profit font-bold text-xl mr-3 mt-1">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-xl">Teknologi Analisis Terkini</h4>
+                                <p class="text-gray-600">Menggunakan alat analisis data canggih untuk insights yang lebih dalam.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-accent-profit font-bold text-xl mr-3 mt-1">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-xl">Fokus pada Efisiensi Biaya</h4>
+                                <p class="text-gray-600">Bukan hanya mencatat, kami membantu Anda menghemat dan meningkatkan profit.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Kontak & CTA -->
+    <section id="kontak" class="py-20 bg-primary-dark text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-accent-profit">Siap Mengambil Keputusan Keuangan yang Tepat?</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                Hubungi tim profesional kami hari ini untuk konsultasi awal GRATIS. Mari kita tingkatkan kesehatan finansial perusahaan Anda.
+            </p>
+
+            <div class="max-w-md mx-auto">
+                <form onsubmit="handleContactForm(event)" class="space-y-4">
+                    <input type="text" placeholder="Nama Lengkap Anda" required
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:ring-accent-profit focus:border-accent-profit">
+                    <input type="email" placeholder="Email Perusahaan" required
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:ring-accent-profit focus:border-accent-profit">
+                    <textarea rows="4" placeholder="Jelaskan kebutuhan Audit/Pajak Anda" required
+                        class="w-full p-3 rounded-lg bg-gray-700 text-white placeholder-gray-400 border border-gray-600 focus:ring-accent-profit focus:border-accent-profit"></textarea>
+                    
+                    <button type="submit" id="submit-button"
+                        class="w-full bg-accent-profit text-primary-dark font-bold text-lg py-3 rounded-xl hover:bg-emerald-400 transition duration-300 transform hover:scale-[1.01] shadow-lg">
+                        Kirim Permintaan Konsultasi
+                    </button>
+                    <div id="message-box" class="mt-4 p-3 bg-transparent text-center font-medium rounded-lg hidden"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-primary-dark border-t border-gray-700 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
+            <p>&copy; 2025 AKL Pro Consulting. Hak Cipta Dilindungi.</p>
+            <p class="mt-2">
+                Jl. Analisis Data No. 12, Kota Profit, Indonesia | Email: info@aklpro.com
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript untuk Interaksi -->
+    <script>
+        // JS untuk Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // JS untuk Handle Form Kontak (Simulasi)
+        function handleContactForm(event) {
+            event.preventDefault(); // Mencegah reload halaman
+            
+            const submitButton = document.getElementById('submit-button');
+            const messageBox = document.getElementById('message-box');
+            
+            submitButton.disabled = true;
+            submitButton.textContent = 'Mengirim...';
+            messageBox.classList.add('hidden');
+            messageBox.textContent = '';
+
+            // Simulasi proses pengiriman data
+            setTimeout(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Kirim Permintaan Konsultasi';
+                
+                messageBox.textContent = 'Pesan Anda berhasil terkirim! Tim AKLPRO akan segera menghubungi Anda.';
+                messageBox.classList.remove('hidden');
+                messageBox.classList.remove('bg-transparent');
+                messageBox.classList.add('bg-emerald-700');
+            }, 1500);
+
+            // Bersihkan form setelah sukses (opsional)
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
