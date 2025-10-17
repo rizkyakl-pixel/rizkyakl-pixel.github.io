@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesan Singkat Penuh Makna</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Tailwind untuk font Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'soft-blue': '#60A5FA',   // Biru lembut sebagai aksen
+                        'light-bg': '#F9FAFB',  // Background sangat terang
+                        'text-dark': '#1F2937', // Teks utama gelap
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9FAFB; /* light-bg */
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style untuk hover kartu kutipan */
+        .quote-card {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            border-left: 5px solid transparent;
+            border-image: linear-gradient(to bottom, #60A5FA, #3B82F6) 1;
+        }
+        .quote-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(96, 165, 250, 0.15), 0 4px 6px -2px rgba(96, 165, 250, 0.08);
+            border-left-color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="text-text-dark">
+
+    <!-- Kontainer Utama -->
+    <div class="container mx-auto px-4 py-16 sm:py-24 max-w-4xl">
+        
+        <!-- Header Utama -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl sm:text-5xl font-extrabold mb-3 leading-tight text-text-dark">
+                Sebuah Jeda Penuh Makna
+            </h1>
+            <p class="text-lg text-gray-500 max-w-xl mx-auto">
+                Kumpulan kata-kata yang kami simpan, bukan sebagai penyesalan, melainkan sebagai bab terbaik dalam buku kehidupan.
+            </p>
+        </header>
+
+        <!-- Grid Kutipan -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <!-- Kartu 1: Kenangan -->
+            <div class="quote-card bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-xl font-medium text-gray-700 italic mb-4">
+                    "Terima kasih untuk jalan yang pernah kita tempuh. Jejakmu, meski samar, akan selalu menjadi kompas kebahagiaanku."
+                </p>
+                <span class="block text-right text-sm font-semibold text-soft-blue">— Tentang Kenangan</span>
+            </div>
+
+            <!-- Kartu 2: Harapan -->
+            <div class="quote-card bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-xl font-medium text-gray-700 italic mb-4">
+                    "Semoga semesta memperlakukanmu lebih baik dari yang pernah kulakukan. Bahagiamu adalah doa yang selalu ku aminkan."
+                </p>
+                <span class="block text-right text-sm font-semibold text-soft-blue">— Tentang Harapan</span>
+            </div>
+
+            <!-- Kartu 3: Pelajaran -->
+            <div class="quote-card bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-xl font-medium text-gray-700 italic mb-4">
+                    "Kita pernah menjadi 'kita' yang luar biasa. Dan dari perpisahan, aku belajar makna dewasa yang sebenarnya."
+                </p>
+                <span class="block text-right text-sm font-semibold text-soft-blue">— Tentang Kedewasaan</span>
+            </div>
+            
+            <!-- Kartu 4: Masa Depan -->
+            <div class="quote-card bg-white p-6 rounded-xl shadow-lg">
+                <p class="text-xl font-medium text-gray-700 italic mb-4">
+                    "Pintu telah tertutup, namun langit yang kita tatap masih sama. Terbanglah tinggi, aku ikut bahagia dari jauh."
+                </p>
+                <span class="block text-right text-sm font-semibold text-soft-blue">— Tentang Jarak</span>
+            </div>
+            
+            <!-- Kartu 5: Penghargaan -->
+            <div class="quote-card bg-white p-6 rounded-xl shadow-lg md:col-span-2">
+                <p class="text-2xl font-semibold text-gray-800 text-center italic mb-3">
+                    "Jika bukan takdir, biarlah waktu yang mengajarimu, bahwa kamu pernah menjadi alasan terindah untukku bangun setiap pagi."
+                </p>
+                <span class="block text-center text-sm font-semibold text-soft-blue">— Intisari Perasaan</span>
+            </div>
+
+        </div>
+
+        <!-- Call to Action Sederhana -->
+        <div class="text-center mt-16 pt-8 border-t border-gray-200">
+            <p class="text-md text-gray-600 mb-4">
+                "Hanya sebuah pesan, dari hati yang pernah menjadi bagian darimu."
+            </p>
+            <button onclick="copyLink(this)" class="bg-soft-blue text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-600 transition duration-300 shadow-md transform hover:scale-105">
+                Bagikan Tautan Ini (Kirim ke Dia)
+            </button>
+            <div id="copy-message" class="mt-4 text-sm font-medium text-soft-blue hidden">Link berhasil disalin!</div>
+        </div>
+
+    </div>
+
+    <!-- JavaScript untuk Fungsi Copy Link -->
+    <script>
+        function copyLink(button) {
+            // Ini hanya simulasi, karena URL sebenarnya tidak bisa disalin dari sandbox
+            // Di lingkungan nyata, kita akan menggunakan navigator.clipboard.writeText(window.location.href);
+
+            const copyMessage = document.getElementById('copy-message');
+            
+            // 1. Simulasikan penyalinan
+            const dummyLink = "Pesan ini khusus untukmu.";
+            
+            // Di lingkungan nyata, gunakan ini:
+            /*
+            navigator.clipboard.writeText(window.location.href).then(() => {
+                copyMessage.textContent = 'Link berhasil disalin!';
+                copyMessage.classList.remove('hidden');
+                setTimeout(() => copyMessage.classList.add('hidden'), 2000);
+            }).catch(err => {
+                console.error('Gagal menyalin:', err);
+            });
+            */
+           
+            // 2. Tampilkan pesan berhasil salin (simulasi)
+            copyMessage.textContent = 'Link berhasil disalin! Sekarang, kirimkan ke dia.';
+            copyMessage.classList.remove('hidden');
+
+            button.textContent = 'Link Tersalin!';
+            button.classList.add('bg-blue-600');
+
+            // Reset tombol setelah 2 detik
+            setTimeout(() => {
+                copyMessage.classList.add('hidden');
+                button.textContent = 'Bagikan Tautan Ini (Kirim ke Dia)';
+                button.classList.remove('bg-blue-600');
+            }, 2000);
+            
+            // Mencegah alert()
+            console.log("Simulasi link disalin: " + dummyLink);
+        }
+    </script>
+</body>
+</html>
